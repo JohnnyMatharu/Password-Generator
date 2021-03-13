@@ -1,10 +1,17 @@
-var passwordLength = prompt("Your password has to be between 8 to 128 characters, please enter the number of characters you wish");
+var passwordLength = prompt("Your password has to be between 8 to 128 characters, please enter the number of characters you wish, and press button 'Generate Password'");
 console.log (passwordLength)
 
-//Here you have to put the if statement for range
 
-let array = [0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','!','"','#','$','%','&',"'",'(',')','*','+','-','.','/',':',';','<','=','>','?','@','[','\\',']','^','_','´','{','|','}','~']
-// array[randomNumber]
+var passwordArray = [0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','!','"','#','$','%','&',"'",'(',')','*','+','-','.','/',':',';','<','=','>','?','@','[','\\',']','^','_','´','{','|','}','~']
+
+//Here you have to put the if statement for range, also anything entered except numerals is not valid
+
+//check if the if statement is correct and at the right spot, also include accept only numbers, and it should continue and not only check once
+if (passwordLength < 8 || passwordLength > 128) {
+  var passwordLenght = prompt("Invalid number, password has to be between 8 to 128 characters, please choose again and press button 'Generate Password'");
+}  
+
+//HERE create for loop
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -12,14 +19,20 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   // var password = generatePassword();
-  var password = "Bob"
+
+//check if we can use the value of password length
+for (var i = 0; i < 93; i++) {
+  var randomNumber = Math.floor(Math.random() * 93);
+  //check the number that is multiplied with, right now is 3
+  var passwordChoice = passwordArray[randomNumber];
+  } 
+
+  var password = passwordChoice;
   var passwordText = document.querySelector("#password");
 // Here you can use something to display including .textcontent 
   passwordText.value = password;
 
 }
-
-//Please add this passowrd to appendshild as another addition 
 
 
 
