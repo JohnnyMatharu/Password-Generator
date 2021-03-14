@@ -12,7 +12,7 @@ if (criteria == true) {
  else 
  { prompt("Your pressed Cancel,  GoodBye !"); }
 });
-//get error confirmed, until then finish rest of code
+//get error confirmed, until then finish rest of codes
 
 
 
@@ -47,124 +47,122 @@ if (passwordLength < 8 || passwordLength > 128)
 {
 alert("You have entered an invalid number, please provide digit within 8 to 128");
 promptUser();
-
 }
-  else if (passwordLength >= 8 || passwordLength <= 128) 
- {
+else if (passwordLength >= 8 || passwordLength <= 128) 
+{
   var scType = confirm("Please select the password mix, you have to choose atleast one character type, if don't want something, press CANCEL, if you wish to choose that option then you will press OK. PLease press OK now to continue");
   var ucType = confirm ("Would you like capital letters in the password?");
   var nuType = confirm ("Would you like small letters in the password?");
   var spType = confirm ("Would you like special characters in the password?");
-
-
-if (!scType && !ucType && !nuType && !spType)
+}
+  
+  if (!scType && !ucType && !nuType && !spType)
   {
     //ask user that they have to select atleast one type
     promptUser();
   }
   
-if (scType && !ucType && !nuType && !spType)
-{
-  for (var i = 0; i < passwordLength; i++) {
-  randomNumber = sc[Math.floor(math.random()*sc.length)];   
+  if (scType && !ucType && !nuType && !spType)
+  {
+    for (var i = 0; i < passwordLength; i++) {
+      randomNumber = sc[Math.floor(Math.random()*sc.length)];   
+    }
   }
-}
-
-if (!scType && ucType && !nuType && !spType)
-{
-  for (var i = 0; i < passwordLength; i++) {
-     randomNumber = uc[Math.floor(math.random()*uc.length)];   
-      }
-}
-
-if (!scType && !ucType && nuType && !spType)
-{
-  for (var i = 0; i < passwordLength; i++) {
-     randomNumber = nu[Math.floor(math.random()*nu.length)];   
-      }
-}
-
-if (!scType && !ucType && !nuType && spType)
-{
-  for (var i = 0; i < passwordLength; i++) {
-     randomNumber = sp[Math.floor(math.random()*sp.length)];   
-      }
-}
-
-if (scType && ucType && !nuType && !spType)
-{
-  for (var i = 0; i < passwordLength; i++) {
-     randomNumber = scuc[Math.floor(math.random()*scuc.length)];   
-      }
-}
-
-if (!scType && !ucType && nuType && spType)
-{
-  for (var i = 0; i < passwordLength; i++) {
-     randomNumber = nusp[Math.floor(math.random()*nusp.length)];   
-      }
-}
-
-if (!scType && ucType && nuType && !spType)
-{
-  for (var i = 0; i < passwordLength; i++) {
-    randomNumber = ucnu[Math.floor(math.random()*ucnu.length)];   
-      }
-}
-
-if (scType && !ucType && !nuType && spType)
-{
-  for (var i = 0; i < passwordLength; i++) {
-     randomNumber = scsp[Math.floor(math.random()*scsp.length)];   
-      }
-}
-
-if (scType && ucType && nuType && !spType)
-{
-  for (var i = 0; i < passwordLength; i++) {
-     randomNumber = scucnu[Math.floor(math.random()*scucnu.length)];   
-      }
-}
-
-if (!scType && ucType && nuType && spType)
-{
-  for (var i = 0; i < passwordLength; i++) {
-     randomNumber = ucnusp[Math.floor(math.random()*ucnusp.length)];   
-      }
-}
-
-if (scType && ucType && !nuType && spType)
-{
-  for (var i = 0; i < passwordLength; i++) {
-     randomNumber = scucsp[Math.floor(math.random()*scucsp.length)];   
-      }
-}
-
-if (scType && !ucType && nuType && spType)
-{
-  for (var i = 0; i < passwordLength; i++) {
-    randomNumber = scnusp[Math.floor(math.random()*scnusp.length)];   
-      }
-}
-
-if (scType && ucType && nuType && spType)
-{
-  for (var i = 0; i < passwordLength; i++) {
-     randomNumber = scucnusp[Math.floor(math.random()*scucnusp.length)];   
-      }
-}
-
   
+  if (!scType && ucType && !nuType && !spType)
+  {
+    for (var i = 0; i < passwordLength; i++) {
+      randomNumber = uc[Math.floor(Math.random()*uc.length)];   
+    }
+  }
+  
+  if (!scType && !ucType && nuType && !spType)
+  {
+    for (var i = 0; i < passwordLength; i++) {
+      randomNumber = nu[Math.floor(Math.random()*nu.length)];   
+    }
+  }
+  
+  if (!scType && !ucType && !nuType && spType)
+  {
+    for (var i = 0; i < passwordLength; i++) {
+      randomNumber = sp[Math.floor(Math.random()*sp.length)];   
+    }
+  }
+  
+  if (scType && ucType && !nuType && !spType)
+  {
+    for (var i = 0; i < passwordLength; i++) {
+      randomNumber = scuc[Math.floor(Math.random()*scuc.length)];   
+    }
+  }
+  
+  if (!scType && !ucType && nuType && spType)
+  {
+    for (var i = 0; i < passwordLength; i++) {
+      randomNumber = nusp[Math.floor(Math.random()*nusp.length)];   
+    }
+  }
+  
+  if (!scType && ucType && nuType && !spType)
+  {
+    for (var i = 0; i < passwordLength; i++) {
+      randomNumber = ucnu[Math.floor(Math.random()*ucnu.length)];   
+    }
+  }
+  
+  if (scType && !ucType && !nuType && spType)
+  {
+    for (var i = 0; i < passwordLength; i++) {
+      randomNumber = scsp[Math.floor(Math.random()*scsp.length)];   
+    }
+  }
+  
+  if (scType && ucType && nuType && !spType)
+  {
+    for (var i = 0; i < passwordLength; i++) {
+      randomNumber = scucnu[Math.floor(Math.random()*scucnu.length)];   
+    }
+  }
+  
+  if (!scType && ucType && nuType && spType)
+  {
+    for (var i = 0; i < passwordLength; i++) {
+      randomNumber = ucnusp[Math.floor(Math.random()*ucnusp.length)];   
+    }
+  }
+  
+  if (scType && ucType && !nuType && spType)
+  {
+    for (var i = 0; i < passwordLength; i++) {
+      randomNumber =  spscuc[Math.floor(Math.random()*spscuc.length)];   
+    }
+  }
+  
+  if (scType && !ucType && nuType && spType)
+  {
+    for (var i = 0; i < passwordLength; i++) {
+      randomNumber = nuspsc[Math.floor(Math.random()*nuspsc.length)];   
+    }
+  }
+  
+  if (scType && ucType && nuType && spType)
+{
+  for (var i = 0; i < passwordLength; i++) {
+     randomNumber = scucnusp[Math.floor(Math.random()*scucnusp.length)];   
+     console.log(randomNumber);
+      }
+}
+
+  let passwordArray = [];
         var passwordChoice = passwordArray[randomNumber];
         var password = passwordChoice;
         var passwordText = document.querySelector("#password");
       // Here you can use something to display including .textcontent 
         passwordText.value = password;
-      }
-      else {passwordLenght = prompt(" You have entered an invalid number,has to be within 8 to 12 characters")
-   //Here you can put the if statement for range, also anything entered except numerals is not valid and let the person try again for invalid numbers or letters
+  
 }
-}
+
 
 
 
