@@ -1,11 +1,17 @@
 //Plese check acceptance criteria 
 var passwordLength;
-generateBtn.addEventListener("click", passwordQuestion() {prompt("Your password will be a mix of uppercase, lowercase, numbers and special characters, press OK to continue");});
+
+var generateBtn = document.querySelector("#generate");
+generateBtn.addEventListener("click", function () {prompt("Your password criteria consists of uppercase, lowercase, numbers and special characters, press OK to continue");});
+//I want to continue next promt when use presses OK, and break code when use presses cancel
+
+if (true)
+{
+passwordLength = prompt("Please enter the number of digits for your password")
 console.log(passwordLength);
-if true {
-
-
 }
+else { break;
+};
 
 var passwordArray = [0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','!','"','#','$','%','&',"'",'(',')','*','+','-','.','/',':',';','<','=','>','?','@','[','\\',']','^','_','´','{','|','}','~']
 
@@ -19,7 +25,7 @@ if (passwordLength < 8 || passwordLength > 128) {
 //HERE create for loop
 
 // Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
+
 
 // Write password to the #password input
 function writePassword() {
