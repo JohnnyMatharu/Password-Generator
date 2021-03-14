@@ -2,17 +2,16 @@
 var passwordLength;
 
 var generateBtn = document.querySelector("#generate");
-generateBtn.addEventListener("click", function () {var criteria = prompt("Your password criteria consists of uppercase, lowercase, numbers and special characters");
+generateBtn.addEventListener("click", function () {var criteria = confirm("Your password criteria consists of uppercase, lowercase, numbers, and special characters, press OK to continue");
 //Add digit confirmation, join oKay to continue to previous statement if possible
 
-var r = confirm("Please press OK to continue")
-if (r == true) {
+if (criteria == true) {
   passwordLength = prompt("Please enter the number of digits for your password, has to be between 8 to 128 characters");  
   createPassword();
 } 
  else 
  { prompt("Your pressed Cancel,  GoodBye !"); }
-};
+});
 //get error confirmed, until then finish rest of code
 
 function createPassword ()
@@ -34,13 +33,16 @@ function createPassword ()
   var spscuc = spsc.concat(uc);
   var scucnusp = scucnu.concat(sp);
 
-
-  if (passwordLength >= 8 || passwordLength <= 128) 
- 
-  var scType = confirm("Please select the password mix, you have to choose atleast one character type, would you like small case alphabets in you password?");
-  var ucType = confirm ("Would you like capital letters in the password");
-  var nuType = confirm ("Would you like small letters in the passoword");
-  var spType = confirm ("Would you like special characters in the passoword");
+if (passwordLength < 8 || passwordLength > 128) 
+{prompt("You have entered an invalid number, please provide digit within 8 to 128");
+createPassword();
+}
+  else if (passwordLength >= 8 || passwordLength <= 128) 
+ {
+  var scType = confirm("Please select the password mix, you have to choose atleast one character type, if don't want something, press CANCEL, if you wish to choose that option then you will press OK. PLease press OK now to continue");
+  var ucType = confirm ("Would you like capital letters in the password?");
+  var nuType = confirm ("Would you like small letters in the password?");
+  var spType = confirm ("Would you like special characters in the password?");
 
 
 if (!scType && !ucType && !nuType && !spType)
@@ -147,33 +149,9 @@ if (scType && ucType && nuType && spType)
       // Here you can use something to display including .textcontent 
         passwordText.value = password;
       }
-      }
-      else {
-        prompt("Your pressed Cancel,  GoodBye !") 
-      }
-        
-      }
-
-  }
-  }    
-   else {passwordLenght = prompt(" You have entered an invalid number,has to be within 8 to 12 characters")
+      else {passwordLenght = prompt(" You have entered an invalid number,has to be within 8 to 12 characters")
    //Here you can put the if statement for range, also anything entered except numerals is not valid and let the person try again for invalid numbers or letters
-console.log(passwordLength)} 
-  //add the selection of 4 choices, any out of 4 and minimum of 1
+}
 }
 
 
-
-
-
-
-
-//Read acceptance criteria and make sure everything is followed and incorporate anything missing to pseudocode
-//have an array ready to be selected from for passwords, include all in one upper case and lower case alphabets, special characters, digits etc., if not then make multiple arrays consisting one of numbers, one for special characters etc. choose from each array equally and then ramie the final selection once more.
-//Ask prompt, store as variable, ask for number digits and give error message if anything else is entered
-//Run array function for number of times (for or while loop) mentioned in variable and form an array of randomly populated number, length should be same as entered by user
-//connect the answer to display, make sure function returns the answer connect var password, save the returned value in event .. variable  
-//you can allow the user to reset if possible  
-
-
-// Add event listener to generate button
