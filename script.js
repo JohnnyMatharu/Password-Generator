@@ -1,6 +1,11 @@
-var passwordLength = prompt("Your password has to be between 8 to 128 characters, please enter the number of characters you wish, and press button 'Generate Password'");
-console.log (passwordLength)
+//Plese check acceptance criteria 
+var passwordLength;
+generateBtn.addEventListener("click", passwordQuestion() {prompt("Your password will be a mix of uppercase, lowercase, numbers and special characters, press OK to continue");});
+console.log(passwordLength);
+if true {
 
+
+}
 
 var passwordArray = [0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','!','"','#','$','%','&',"'",'(',')','*','+','-','.','/',':',';','<','=','>','?','@','[','\\',']','^','_','´','{','|','}','~']
 
@@ -48,4 +53,4 @@ for (var i = 0; i < 93; i++) {
 
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+
