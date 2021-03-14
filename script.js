@@ -2,16 +2,17 @@
 var passwordLength;
 
 var generateBtn = document.querySelector("#generate");
-generateBtn.addEventListener("click", function () {prompt("Your password criteria consists of uppercase, lowercase, numbers and special characters, press OK to continue");});
+generateBtn.addEventListener("click", function () {var criteria = prompt("Your password criteria consists of uppercase, lowercase, numbers and special characters");
 //I want to continue next promt when use presses OK, and break code when use presses cancel
 
-if (true)
-{
-passwordLength = prompt("Please enter the number of digits for your password")
-console.log(passwordLength);
-}
-else { break;
-};
+var r = confirm("press OK to continue")
+if (r == true) {
+  passwordLength = prompt("Please enter the number of digits for your password")
+console.log(passwordLength)
+ } else {
+  prompt("Your pressed Cancel,  GoodBye !") 
+ }
+});
 
 var passwordArray = [0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','!','"','#','$','%','&',"'",'(',')','*','+','-','.','/',':',';','<','=','>','?','@','[','\\',']','^','_','´','{','|','}','~']
 
