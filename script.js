@@ -3,48 +3,168 @@ var passwordLength;
 
 var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", function () {var criteria = prompt("Your password criteria consists of uppercase, lowercase, numbers and special characters");
-//I want to continue next promt when use presses OK, and break code when use presses cancel
+//Add digit confirmation, join oKay to continue to previous statement if possible
 
-var r = confirm("press OK to continue")
+var r = confirm("Please press OK to continue")
 if (r == true) {
-  passwordLength = prompt("Please enter the number of digits for your password")
-console.log(passwordLength)
- } else {
-  prompt("Your pressed Cancel,  GoodBye !") 
- }
-});
+  passwordLength = prompt("Please enter the number of digits for your password, has to be between 8 to 128 characters");  
+  createPassword();
+} 
+ else 
+ { prompt("Your pressed Cancel,  GoodBye !"); }
+};
+//get error confirmed, until then finish rest of code
 
-var passwordArray = [0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','!','"','#','$','%','&',"'",'(',')','*','+','-','.','/',':',';','<','=','>','?','@','[','\\',']','^','_','´','{','|','}','~']
+function createPassword ()
+{
 
-//Here you have to put the if statement for range, also anything entered except numerals is not valid
+  var randomNumber = 0;
 
-//check if the if statement is correct and at the right spot, also include accept only numbers, and it should continue and not only check once
-if (passwordLength < 8 || passwordLength > 128) {
-  var passwordLenght = prompt("Invalid number, password has to be between 8 to 128 characters, please choose again and press button 'Generate Password'");
-}  
+  let sc = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+  let uc = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+  let nu = [0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5]
+  let sp = ['!','"','#','$','%','&',"'",'(',')','*','+','-','.','/',':',';','<','=','>','?','@','[','\\',']','^','_','´','{','|','}','~']
+  var scuc = sc.concat(uc);
+  var ucnu = uc.concat(nu);
+  var nusp = nu.concat(sp);
+  var spsc = sp.concat(sc);
+  var scucnu = scuc.concat(nu);
+  var ucnusp = ucnu.concat(sp);
+  var nuspsc = nusp.concat(sc);
+  var spscuc = spsc.concat(uc);
+  var scucnusp = scucnu.concat(sp);
 
-//HERE create for loop
 
-// Get references to the #generate element
+  if (passwordLength >= 8 || passwordLength <= 128) 
+ 
+  var scType = confirm("Please select the password mix, you have to choose atleast one character type, would you like small case alphabets in you password?");
+  var ucType = confirm ("Would you like capital letters in the password");
+  var nuType = confirm ("Would you like small letters in the passoword");
+  var spType = confirm ("Would you like special characters in the passoword");
 
 
-// Write password to the #password input
-function writePassword() {
-  // var password = generatePassword();
-
-//check if we can use the value of password length
-for (var i = 0; i < 93; i++) {
-  var randomNumber = Math.floor(Math.random() * 93);
-  //check the number that is multiplied with, right now is 3
-  var passwordChoice = passwordArray[randomNumber];
-  } 
-
-  var password = passwordChoice;
-  var passwordText = document.querySelector("#password");
-// Here you can use something to display including .textcontent 
-  passwordText.value = password;
-
+if (!scType && !ucType && !nuType && !spType)
+  {
+    //ask user that they have to select atleast one type
+  createPassword();
+  }
+  
+if (scType && !ucType && !nuType && !spType)
+{
+  for (var i = 0; i < passwordLength; i++) {
+  randomNumber = sc[Math.floor(math.random()*sc.length)];   
+  }
 }
+
+if (!scType && ucType && !nuType && !spType)
+{
+  for (var i = 0; i < passwordLength; i++) {
+     randomNumber = uc[Math.floor(math.random()*uc.length)];   
+      }
+}
+
+if (!scType && !ucType && nuType && !spType)
+{
+  for (var i = 0; i < passwordLength; i++) {
+     randomNumber = nu[Math.floor(math.random()*nu.length)];   
+      }
+}
+
+if (!scType && !ucType && !nuType && spType)
+{
+  for (var i = 0; i < passwordLength; i++) {
+     randomNumber = sp[Math.floor(math.random()*sp.length)];   
+      }
+}
+
+if (scType && ucType && !nuType && !spType)
+{
+  for (var i = 0; i < passwordLength; i++) {
+     randomNumber = scuc[Math.floor(math.random()*scuc.length)];   
+      }
+}
+
+if (!scType && !ucType && nuType && spType)
+{
+  for (var i = 0; i < passwordLength; i++) {
+     randomNumber = nusp[Math.floor(math.random()*nusp.length)];   
+      }
+}
+
+if (!scType && ucType && nuType && !spType)
+{
+  for (var i = 0; i < passwordLength; i++) {
+    randomNumber = ucnu[Math.floor(math.random()*ucnu.length)];   
+      }
+}
+
+if (scType && !ucType && !nuType && spType)
+{
+  for (var i = 0; i < passwordLength; i++) {
+     randomNumber = scsp[Math.floor(math.random()*scsp.length)];   
+      }
+}
+
+if (scType && ucType && nuType && !spType)
+{
+  for (var i = 0; i < passwordLength; i++) {
+     randomNumber = scucnu[Math.floor(math.random()*scucnu.length)];   
+      }
+}
+
+if (!scType && ucType && nuType && spType)
+{
+  for (var i = 0; i < passwordLength; i++) {
+     randomNumber = ucnusp[Math.floor(math.random()*ucnusp.length)];   
+      }
+}
+
+if (scType && ucType && !nuType && spType)
+{
+  for (var i = 0; i < passwordLength; i++) {
+     randomNumber = scucsp[Math.floor(math.random()*scucsp.length)];   
+      }
+}
+
+if (scType && !ucType && nuType && spType)
+{
+  for (var i = 0; i < passwordLength; i++) {
+    randomNumber = scnusp[Math.floor(math.random()*scnusp.length)];   
+      }
+}
+
+if (scType && ucType && nuType && spType)
+{
+  for (var i = 0; i < passwordLength; i++) {
+     randomNumber = scucnusp[Math.floor(math.random()*scucnusp.length)];   
+      }
+}
+
+  
+        var passwordChoice = passwordArray[randomNumber];
+        var password = passwordChoice;
+        var passwordText = document.querySelector("#password");
+      // Here you can use something to display including .textcontent 
+        passwordText.value = password;
+      }
+      }
+      else {
+        prompt("Your pressed Cancel,  GoodBye !") 
+      }
+        
+      }
+
+  }
+  }    
+   else {passwordLenght = prompt(" You have entered an invalid number,has to be within 8 to 12 characters")
+   //Here you can put the if statement for range, also anything entered except numerals is not valid and let the person try again for invalid numbers or letters
+console.log(passwordLength)} 
+  //add the selection of 4 choices, any out of 4 and minimum of 1
+}
+
+
+
+
 
 
 
@@ -56,8 +176,4 @@ for (var i = 0; i < 93; i++) {
 //you can allow the user to reset if possible  
 
 
-
-
-
 // Add event listener to generate button
-
