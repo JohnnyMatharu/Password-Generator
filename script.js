@@ -14,6 +14,16 @@ if (criteria == true) {
 });
 //get error confirmed, until then finish rest of code
 
+
+
+function promptUser() 
+{
+passwordLength = prompt("Please enter the number of digits for your password, has to be between 8 to 128 characters");
+createPassword();
+
+}
+
+
 function createPassword ()
 {
 
@@ -34,8 +44,10 @@ function createPassword ()
   var scucnusp = scucnu.concat(sp);
 
 if (passwordLength < 8 || passwordLength > 128) 
-{prompt("You have entered an invalid number, please provide digit within 8 to 128");
-createPassword();
+{
+alert("You have entered an invalid number, please provide digit within 8 to 128");
+promptUser();
+
 }
   else if (passwordLength >= 8 || passwordLength <= 128) 
  {
@@ -48,7 +60,7 @@ createPassword();
 if (!scType && !ucType && !nuType && !spType)
   {
     //ask user that they have to select atleast one type
-  createPassword();
+    promptUser();
   }
   
 if (scType && !ucType && !nuType && !spType)
@@ -153,5 +165,6 @@ if (scType && ucType && nuType && spType)
    //Here you can put the if statement for range, also anything entered except numerals is not valid and let the person try again for invalid numbers or letters
 }
 }
+
 
 
