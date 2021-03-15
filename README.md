@@ -5,13 +5,13 @@ Application that employee uses to generate random password based on criteria use
 
 
 # Screenshots
+https://github.com/JohnnyMatharu/Password-Generator/blob/main/password.jpg?raw=true
 
 
 # URL: 
 https://github.com/JohnnyMatharu/Password-Generator/tree/main
 
 https://johnnymatharu.github.io/Password-Generator/
-
 
 
 # Made by: 
