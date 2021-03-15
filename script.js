@@ -33,15 +33,7 @@ function createPassword ()
   let uc = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
   let nu = [0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5]
   let sp = ['!','"','#','$','%','&',"'",'(',')','*','+','-','.','/',':',';','<','=','>','?','@','[','\\',']','^','_','´','{','|','}','~']
-  var scuc = sc.concat(uc);
-  var ucnu = uc.concat(nu);
-  var nusp = nu.concat(sp);
-  var spsc = sp.concat(sc);
-  var scucnu = scuc.concat(nu);
-  var ucnusp = ucnu.concat(sp);
-  var nuspsc = nusp.concat(sc);
-  var spscuc = spsc.concat(uc);
-  var scucnusp = scucnu.concat(sp);
+  
 
 if (passwordLength < 8 || passwordLength > 128) 
 {
@@ -58,123 +50,39 @@ else if (passwordLength >= 8 || passwordLength <= 128)
 }
   
 let passwordArray = [];
+let possibleChars = [];
 
-  if (!scType && !ucType && !nuType && !spType)
-  {
-    //ask user that they have to select atleast one type
-    promptUser();
-  }
-  
-  else if (scType && !ucType && !nuType && !spType)
-  {
-    for (var i = 0; i < passwordLength; i++) {
-      randomNumber = sc[Math.floor(Math.random()*sc.length)];   
-      passwordArray.push(randomNumber)
-      console.log(randomNumber);
-      console.log(passwordArray);
-    }
-  }
-  
-  else if (!scType && ucType && !nuType && !spType)
-  {
-    for (var i = 0; i < passwordLength; i++) {
-      randomNumber = uc[Math.floor(Math.random()*uc.length)];   
-      passwordArray.push(randomNumber)
-    }
-  }
-  
-  else if (!scType && !ucType && nuType && !spType)
-  {
-    for (var i = 0; i < passwordLength; i++) {
-      randomNumber = nu[Math.floor(Math.random()*nu.length)];
-      passwordArray.push(randomNumber)
-    }
-  }
-  
-  else if (!scType && !ucType && !nuType && spType)
-  {
-    for (var i = 0; i < passwordLength; i++) {
-      randomNumber = sp[Math.floor(Math.random()*sp.length)];   
-      passwordArray.push(randomNumber)
-    }
-  }
-  
-  else if (scType && ucType && !nuType && !spType)
-  {
-    for (var i = 0; i < passwordLength; i++) {
-      randomNumber = scuc[Math.floor(Math.random()*scuc.length)];
-      passwordArray.push(randomNumber)   
-    }
-  }
-  
-  else if (!scType && !ucType && nuType && spType)
-  {
-    for (var i = 0; i < passwordLength; i++) {
-      randomNumber = nusp[Math.floor(Math.random()*nusp.length)];
-      passwordArray.push(randomNumber)   
-    }
-  }
-  
-  else if (!scType && ucType && nuType && !spType)
-  {
-    for (var i = 0; i < passwordLength; i++) {
-      randomNumber = ucnu[Math.floor(Math.random()*ucnu.length)];
-      passwordArray.push(randomNumber)   
-    }
-  }
-  
-  else if (scType && !ucType && !nuType && spType)
-  {
-    for (var i = 0; i < passwordLength; i++) {
-      randomNumber = scsp[Math.floor(Math.random()*scsp.length)];
-      passwordArray.push(randomNumber)   
-    }
-  }
-  
-  else if (scType && ucType && nuType && !spType)
-  {
-    for (var i = 0; i < passwordLength; i++) {
-      randomNumber = scucnu[Math.floor(Math.random()*scucnu.length)];
-      passwordArray.push(randomNumber)   
-    }
-  }
-  
-  else if (!scType && ucType && nuType && spType)
-  {
-    for (var i = 0; i < passwordLength; i++) {
-      randomNumber = ucnusp[Math.floor(Math.random()*ucnusp.length)];
-      passwordArray.push(randomNumber)   
-    }
-  }
-  
-  else if (scType && ucType && !nuType && spType)
-  {
-    for (var i = 0; i < passwordLength; i++) {
-      randomNumber =  spscuc[Math.floor(Math.random()*spscuc.length)]; 
-      passwordArray.push(randomNumber)  
-    }
-  }
-  
-  else if (scType && !ucType && nuType && spType)
-  {
-    for (var i = 0; i < passwordLength; i++) {
-      randomNumber = nuspsc[Math.floor(Math.random()*nuspsc.length)];  
-      passwordArray.push(randomNumber) 
-    }
-  }
-  
-  else if (scType && ucType && nuType && spType)
+
+if (!scType && !ucType && !nuType && !spType)
 {
-  for (var i = 0; i < passwordLength; i++) {
-     randomNumber = scucnusp[Math.floor(Math.random()*scucnusp.length)];  
-     passwordArray.push(randomNumber) 
-  
-    }
+  promptUser();
+}
+
+if (scType){
+  possibleChars = possibleChars.concat(sc)
+}
+
+if (ucType) {
+
+  possibleChars = possibleChars.concat(uc)
+}
+
+if (nuType){
+  possibleChars = possibleChars.concat(nu)
+}
+
+if (spType) {
+  possibleChars = possibleChars.concat(sp)
+}
+
+for (var i = 0; i<passwordLength; i++){
+  var randomChar = possibleChars[Math.floor(Math.random()*possibleChars.length)]
+passwordArray.push(randomChar)
 }
 
   
-        document.querySelector("#password").value = passwordArray.join("")
-      // Make sure lat question prompt is visible for special characters
+  document.querySelector("#password").value = passwordArray.join("")
+  // Make sure lat question prompt is visible for special characters
   
 }
 
